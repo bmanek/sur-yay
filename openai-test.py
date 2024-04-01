@@ -1,11 +1,18 @@
 from dotenv import load_dotenv
 import os
+import pandas as pd
+
 
 # Load environment variables from .env
 load_dotenv()
 
 from openai import OpenAI
 client = OpenAI()
+
+df = pd.read_csv('survey_responses.csv')
+
+
+
 
 completion = client.chat.completions.create(
   model="gpt-3.5-turbo",
